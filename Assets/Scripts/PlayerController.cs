@@ -5,23 +5,14 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {   
     private bool isWalking;
+
+    [SerializeField] private GameInput gameInput;
+    
     
     private void Update() {
-        Vector3 moveDir =new Vector3(0,0,0);
-        if(Input.GetKey(KeyCode.W)){
-            moveDir.z += +1f;
-        }
-        if(Input.GetKey(KeyCode.S)){
-            moveDir.z += -1f;
-        }
-        if(Input.GetKey(KeyCode.A)){
-            moveDir.x += -1f;
-        }
-        if(Input.GetKey(KeyCode.D)){
-            moveDir.x += +1f;
-        }
 
-        moveDir = moveDir.normalized; //this way if you press two keys at once it'll move same amount in both direction diagnonally summing to 1
+        Vector3 moveDir = gameInput.GetMovementVectorNormalized();
+
         float moveAcceleration = 8f;
         transform.position += moveDir*Time.deltaTime*moveAcceleration;
 
