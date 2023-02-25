@@ -10,8 +10,8 @@ public class PlayerController : MonoBehaviour
     
     
     private void Update() {
-
-        Vector3 moveDir = gameInput.GetMovementVectorNormalized();
+        Vector2 inputVector = gameInput.GetMovementVectorNormalized();
+        Vector3 moveDir = new Vector3(inputVector.x,0f,inputVector.y);
 
         float moveAcceleration = 8f;
         transform.position += moveDir*Time.deltaTime*moveAcceleration;

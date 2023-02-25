@@ -31,7 +31,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""name"": ""Move"",
                     ""type"": ""Value"",
                     ""id"": ""9c64ac73-8539-403f-9ebf-7570550ad309"",
-                    ""expectedControlType"": ""Vector3"",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
@@ -40,8 +40,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             ""bindings"": [
                 {
                     ""name"": ""WASD"",
-                    ""id"": ""66e6c8ea-8bee-4a91-8e07-11907fdef03d"",
-                    ""path"": ""3DVector"",
+                    ""id"": ""33f61972-5a47-44ef-9fdd-0b7c618eac5c"",
+                    ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -51,7 +51,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""up"",
-                    ""id"": ""dc182ea6-a2f7-42f6-8e11-aa3985e81e30"",
+                    ""id"": ""ccd4e995-e509-4d62-aba0-753d8b4b4827"",
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -62,7 +62,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""down"",
-                    ""id"": ""75e4e1d3-0b34-400a-946a-d08f6d31b0ce"",
+                    ""id"": ""917be057-2ff8-4cb7-aeca-8363654ceb69"",
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -73,7 +73,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""left"",
-                    ""id"": ""047a0a2c-71b5-4fcc-ab08-2e63e7f6d25a"",
+                    ""id"": ""ba05258c-2e8d-40d1-b72d-b4884d22bfbc"",
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -84,8 +84,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""right"",
-                    ""id"": ""7a84041f-4674-4d6e-9398-cfe9671ade27"",
-                    ""path"": """",
+                    ""id"": ""ac35e93e-b948-4073-81fb-0dbef6a94c64"",
+                    ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
