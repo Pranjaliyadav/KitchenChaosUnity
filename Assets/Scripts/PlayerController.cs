@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     //[SerializeField] private GameInput gameInput;
     float moveAcceleration = 7f;
     float rotateSpeed = 10f;
+
     private void Update() {
         Vector3 moveDir = new Vector3(0, 0, 0);
         if (Input.GetKey(KeyCode.W))
@@ -29,8 +30,53 @@ public class PlayerController : MonoBehaviour
         }
 
         moveDir = moveDir.normalized; //this way if you press two keys at once it'll move same amount in both direction diagnonally summing to 1
+
+        float moveDistance = moveAcceleration * Time.deltaTime;
+
+        float playerHeight = 2f;
         
-        transform.position += moveDir * Time.deltaTime * moveAcceleration;
+
+        float playerRadius = 0.7f;
+        bool canMove = !Physics.CapsuleCast(transform.position, transform.position+Vector3.up * playerHeight,playerRadius,moveDir, moveDistance); //can move if this raycast doesnt hit anything
+
+        
+        if (!canMove)
+        {
+            //cant move towards moveDir
+
+            //attempt only X movement
+            Vector3 moveDirX = new Vector3(moveDir.x, 0, 0).normalized;
+
+            canMove = !Physics.CapsuleCast(transform.position, transform.position + Vector3.up * playerHeight, playerRadius, moveDirX, moveDistance);
+
+            if (canMove)
+            {
+                //can move only on x
+                moveDir = moveDirX;
+            }
+            else
+            {
+                Vector3 moveDirZ = new Vector3(0, 0, moveDir.z).normalized;
+                canMove = !Physics.CapsuleCast(transform.position, transform.position + Vector3.up * playerHeight, playerRadius, moveDirZ, moveDistance);
+
+                if (canMove)
+                {
+                    //can move only on z
+                    moveDir = moveDirZ;
+                }
+                else
+                {
+                    //cannot move in any direction
+
+                }
+            }
+
+        }
+
+        if (canMove)
+        {
+            transform.position += moveDir * moveDistance;
+        }
 
         isWalking = moveDir != Vector3.zero; //if moveDir is diff than 0,0,0
 
