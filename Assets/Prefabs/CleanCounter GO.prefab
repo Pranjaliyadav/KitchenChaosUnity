@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 704409137732246230}
   - component: {fileID: 704409137732246231}
   - component: {fileID: 9174148320124829562}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CleanCounter GO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32,7 +32,7 @@ Transform:
   m_Children:
   - {fileID: 3924714895421093010}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!65 &704409137732246231
 BoxCollider:
